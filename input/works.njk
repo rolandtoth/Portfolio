@@ -1,0 +1,30 @@
+---
+title: Works
+---
+
+{% extends 'layouts/@default.njk' %}
+
+{% block headerslot %}
+<div>
+  <h1>Works</h1>
+  <p class="subtitle">
+    <strong>Hand-picked selection of my favorite works.</strong>
+  </p>
+</div>
+{% endblock %}
+
+{% block main %}
+<div class="work-listing">
+  <ul>
+  {% for page in collections.work %}
+   {% set img = page.data.img | postImage(cfg.images.thumbSize) %}
+    <li style="background-image: url('{{ img | url | buildTimestamp }}')">
+      <a href="{{ page.url | url }}">
+      {{ page.data.title }}
+      <span>{{ page.data.date | dateDisplay }}</span>
+      </a>
+    </li>
+  {% endfor %}
+  </ul>
+</div>
+{% endblock %}

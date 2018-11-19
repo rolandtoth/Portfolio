@@ -1,0 +1,10 @@
+<ul>
+    {% for item in headerlinks %}
+        <li>
+            <a href="{{ item[2] }}" target="_blank" rel="noopener">
+                <strong>{{ item[0] }}</strong>
+                <span>{{ item[1] }}</span>
+            </a>
+        </li>
+    {% endfor %}
+</ul>

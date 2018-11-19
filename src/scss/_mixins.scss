@@ -1,0 +1,13 @@
+@mixin highlightLines($size, $color) {
+  display: inline;
+  background: $color;
+  box-shadow: $size 0 0 $color, -$size 0 0 $color;
+}
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}

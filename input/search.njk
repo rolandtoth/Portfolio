@@ -1,0 +1,13 @@
+---
+permalink: search.json
+sitemapIgnore: true
+---
+[
+{%- for post in collections.work %}
+  {
+    "url": "{{ post.url }}",
+    "title": "{{ post.data.title }}",
+    "index": "{{ post.templateContent | squash }}"
+  }{% if not loop.last %},{% endif %}
+{%- endfor -%}
+]

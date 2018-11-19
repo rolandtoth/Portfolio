@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="{{ seo_description }}">
+        <meta name="theme-color" content="#49616e">
+        <title>{{ title | pageTitle}}</title>
+        {# <link rel="stylesheet" href="{{ cfg.css | url | buildTimestamp }}"/> #}
+        {% set css %}{% include "style.min.css" %}{% endset %}
+        <style>{{ css | safe }}</style>
+        <link rel="shortcut icon" href="{{ cfg.favicon | url }}">
+    </head>
+    <body>
+        <div class="main-wrap">
+            <header>
+                <div class="container header-links">
+                    {% include "headerlinks.njk" %}
+                </div>
+                <div class="container header-content">
+                    {% block breadcrumb %}
+                        <a href="{{ "/" | url }}">rolandtoth</a>
+                    {% endblock %}
+                    <div>
+                        {% block headerslot %}{% endblock %}
+                        <div class="socials">
+                            {% include "socials.njk" %}
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="main-content">
+                <div class="container">
+                    {% block main %}{% endblock %}
+                    <footer>
+                        <p>&copy; rolandtoth {{ "now" | dateDisplay("year") }} · Created with <a href="https://www.11ty.io/" target="_blank" rel="noopener">Eleventy</a></p>
+                    </footer>
+                </div>
+            </div>
+        </div>
+        <script>var quotes={{ cfg.quotes | dump | safe }},pageNumber={% if pagination.pageNumber %}{{ pagination.pageNumber + 1 }}{% else %}1{% endif %};</script>
+        {% for script in cfg.scripts %}
+        <script src="{{ script | url | buildTimestamp }}" async></script>
+        {% endfor %}
+    </body>
+</html>

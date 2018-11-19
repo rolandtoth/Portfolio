@@ -1,0 +1,47 @@
+---
+seo_description: "Portfolio of Roland Toth Pal, web designer and developer"
+pagination:
+    data: collections.work
+    size: 6
+    alias: works
+permalink: /{% if pagination.pageNumber === 0 %}index.html{% else %}page-{{ pagination.pageNumber + 1 }}/index.html{% endif %}
+---
+
+{% extends 'layouts/@default.njk' %}
+
+{% block headerslot %}
+    <div class="quotes">
+      {% set quote = cfg.quotes[pagination.pageNumber] %}
+      <p class="text">{{ quote[1] }}</p>
+      <p class="author">{{ quote[0] }}</p>
+    </div>
+{% endblock %}
+
+{% block main %}
+{% if pagination.pageNumber < 1 %}
+  <div class="intro">
+  <a href="{{ "/about/" | url }}">
+    <img src="{{ cfg.avatar | url | buildTimestamp }}" alt="Roland Toth Pal" class="avatar" {{ cfg.avatar | imageDimensions | safe }}>
+  </a>
+  <div>
+    <p>
+      <strong>Welcome to my webdesign/development portfolio.</strong>
+    </p>
+    <p>
+      Learn about <a href="{{ "/about/" | url }}"><strong>me</strong></a> or read more awesomeness in my <a href="{{ cfg.blogUrl }}" target="_blank" rel="noopener"><strong> blog</strong></a>.
+    </p>
+  </div>
+  </div>
+{% else %}
+  {% include "pagination.njk" %}
+{% endif %}
+
+  <div class="articles">
+  {% for page in works %}
+    {% include "article.njk" %}
+  {% endfor %}
+  </div>
+
+  {% include "pagination.njk" %}
+
+{% endblock %}

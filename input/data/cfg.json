@@ -1,0 +1,63 @@
+{
+    "blogUrl": "http://blog.rolandtoth.hu/",
+    "domain": "https://rolandtoth.hu",
+    "css": "/assets/styles/style.min.css",
+    "pathPrefix": "/portfolio/",
+    "scripts": [
+        "/assets/scripts/lazysizes.min.js",
+        "/assets/scripts/main.min.js"
+    ],
+    "avatar": "/assets/images/roland-toth-pal.jpg",
+    "favicon": "/assets/images/favicon.ico",
+    "transparentPlaceholder": "data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==",
+    "images": {
+        "fullSize": {
+            "width": 640,
+            "height": null
+        },
+        "smallSize": {
+            "width": 320,
+            "height": null
+        },
+        "thumbSize": {
+            "width": 320,
+            "height": 200
+        }
+    },
+    "quotes": [
+        ["Theodor Adorno", "The task of art today is to bring chaos into order."],
+        ["Frank Chimero", "People ignore design that ignores people."],
+        ["Cameron Moll", "It is a mistake to think that you are the typical target user."],
+        ["Moby", "My secret is being not terrible at a lot of things."],
+        ["Tibor Kalman", "When you make something no one hates, no one loves it."],
+        ["Pablo Picasso", "Inspiration exists, but it has to find you working."],
+        ["Alrik Koudenburg", "To be outstanding – get comfortable with being uncomfortable."],
+        ["Edward Tufte", "Good design is a lot like clear thinking made visual."],
+        ["Joe Sparano", "Good design is obvious. Great design is transparent."],
+        ["Juan-Carlos Fernandez", "Bad design is smoke, while good design is a mirror."],
+        ["Nolan Bushnell", "The ultimate inspiration is the deadline."],
+        ["Mieke Gerritzen", "Good design goes to heaven, bad design goes everywhere."],
+        ["Jon Franklin", "Simplicity, carried to an extreme, becomes elegance."],
+        ["Thomas Fuller", "All things are difficult before they are easy."],
+        ["Thomas Carlyle", "Every noble work is at first impossible."],
+        ["Darrell Royal", "Luck is what happens when preparation meets opportunity."],
+        ["John Warnock", "Good typography is something everybody sees but nobody notices."],
+        ["Salvador Dali", "Have no fear of perfection - you'll never reach it."],
+        ["Samuel Beckett", "Try again. Fail again. Fail better."],
+        ["Walter Bagehot", "The greatest pleasure in life is doing what people say you cannot do."],
+        ["Shawn Lesli", "Good design means never having to say “Click Here.”"],
+        ["@jolieodell", "The best designer is a programmer and the best programmer is a designer."],
+        ["Seth Godin", "If failure is not an option, then neither is success."],
+        ["Levi's", "Quality never goes out of style."],
+        ["Jonathan Davis", "You laugh at me because I'm different, I laugh at you because you're all the same."],
+        ["Bruce Lee", "If you spend too much time thinking about a thing, you'll never get it done."],
+        ["Francine Jay", "My goal is no longer to get more done, but rather to have less to do."],
+        ["Peter Block", "Why do anything unless it is going to be great?"],
+        ["Rework (Book)", "ASAP is poison."],
+        ["Terri Blackstock", "Time wasted is not always a waste of time."],
+        ["Scott Adams", "Creativity is allowing yourself to make mistakes. Art is knowing which ones to keep."],
+        ["Dieter Rams", "Good design is as little design as possible."],
+        ["Thomas Edison", "I have not failed. I've just found 10,000 ways that won't work."],
+        ["Robert C. Martin", "The only way to go fast is to go well."]
+    ]
+}

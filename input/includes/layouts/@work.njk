@@ -1,0 +1,49 @@
+{% extends 'layouts/@default.njk' %}
+
+{% block breadcrumb %}
+{{ super() }}
+ · <a href="../">works</a>
+{% endblock %}
+
+{% block headerslot %}
+<div>
+  <h1>{{ title }}</h1>
+  <p class="subtitle-small">
+    Posted on <time datetime="{{ date }}">{{ date | dateDisplay }}</time>
+  </p>
+  <p class="subtitle">
+    <strong>{{ excerpt }}</strong>
+  </p>
+</div>
+{% endblock %}
+
+{% block main %}
+<div class="work-grid">
+  <aside>
+     {% set img = img | postImage(cfg.images.fullSize) %}
+    <img src="{{ img | url | buildTimestamp }}" {{ img | imageDimensions | safe }} alt=""/>
+  </aside>
+  <div class="content">
+    {{ content | safe }}
+    {% if url %}
+        <p><a href="{{ url | url }}" target="_blank" rel="noopener">{{ url }}</a></p>
+    {% endif %}
+    {% import "worktags.njk" as wt %}
+    {{ wt.worktags(worktags, date) }}
+    
+    {% set prevPage = page.inputPath | getSiblingPage(collections.work, "prev") %}
+    {% set nextPage = page.inputPath | getSiblingPage(collections.work, "next") %}
+  </div>
+</div>
+
+<p>
+  <a href="../" class="back">Back</a>
+</p>
+
+<div class="prev-next">
+  <p>
+    <a href="{{ prevPage.url | url }}" class="prev"><span>{{ prevPage.data.title }}</span></a>
+    <a href="{{ nextPage.url | url }}" class="next"><span>{{ nextPage.data.title }}</span></a>
+  </p>
+</div>
+{% endblock %}

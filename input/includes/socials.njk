@@ -1,0 +1,9 @@
+<div class="socials">
+    <ul>
+        {%- for name, details in socials -%}
+        <li class="{{ name }}">
+            <a href="{{ details[0] }}" target="_blank" rel="noopener">{{ details[1] }}</a>
+        </li>
+        {%- endfor -%}
+    </ul>
+</div>

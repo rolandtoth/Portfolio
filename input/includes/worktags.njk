@@ -1,0 +1,10 @@
+{% macro worktags(tags, date) %}
+{% if tags %}
+<div class="worktags">
+    {% for tag in tags -%}
+    <span>{{ tag }}</span>
+    {%- endfor -%}
+    <span>{{ date | dateDisplay("year") }}</span>
+</div>
+{% endif %}
+{% endmacro %}

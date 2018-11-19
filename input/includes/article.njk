@@ -1,0 +1,28 @@
+<article>
+{% set checkboxID = page.url | replace("/", "") %}
+    <input type="checkbox" id="{{ checkboxID }}">
+    <div class="article-image">
+        <label for="{{ checkboxID }}">
+            {% set img = page.data.img | postImage(cfg.images.fullSize) %}
+            <noscript>
+                <img src="{{ img | url | buildTimestamp }}" {{ img | imageDimensions | safe }} alt=""/>
+            </noscript>
+            <img src="{{ cfg.transparentPlaceholder }}" data-src="{{ img | url | buildTimestamp }}" class="lazyload" {{ img | imageDimensions | safe }} alt=""/>
+        </label>
+    </div>
+    <div class="description">
+        <h2>
+          <a href="{{ page.url | url }}" title="">{{ page.data.title }}</a>
+        </h2>
+        <p class="excerpt">{{ page.data.excerpt }}</p>
+        <div class="fulltext">
+            {{ page.templateContent | safe }}
+            {% if page.data.url %}
+                <p><a href="{{ page.data.url | url }}" target="_blank" rel="noopener">{{ page.data.url }}</a></p>
+            {% endif %}
+            {% import "worktags.njk" as wt %}
+        </div>
+        <label for="{{ checkboxID }}" class="button">...</label>
+        {{ wt.worktags(page.data.worktags,page.data.date) }}
+    </div>
+</article>
