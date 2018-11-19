@@ -465,7 +465,7 @@ h3 {
         &:checked {
             ~.article-image {
                 @extend .article-image-active;
-                max-height: 84vh;
+                max-height: 120vh;
 
                 &::before {
                     content: "";
