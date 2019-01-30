@@ -12,20 +12,20 @@ module.exports = function (date, part) {
   } else if (part === 'toISOString') {
     return new Date(date).toISOString();
   } else {
-    var month = [
-      "január",
-      "február",
-      "március",
-      "április",
-      "május",
-      "június",
-      "július",
-      "augusztus",
-      "szeptember",
-      "október",
-      "november",
-      "december"
+    var months = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December"
     ];
-    return `${d.getUTCFullYear()}. ${month[d.getMonth()]} ${d.getDate()}.`;
+    return `${d.getUTCFullYear()}. ${months[d.getMonth()]} ${d.getDate()}.`;
   }
 };
