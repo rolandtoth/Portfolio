@@ -12,7 +12,8 @@ module.exports = function (date, part) {
   } else if (part === 'toISOString') {
     return new Date(date).toISOString();
   } else {
-    var day = nth(d.getDate()),
+    var day = d.getDate(),
+        ordinal = nth(day),
         months = [
           "January",
           "February",
@@ -28,7 +29,7 @@ module.exports = function (date, part) {
           "December"
       ];
     
-    return `${day}${nth(${day})} ${months[d.getMonth()]}, ${d.getUTCFullYear()}`;
+    return `${day}<sup>${ordinal}</sup> ${months[d.getMonth()]}, ${d.getUTCFullYear()}`;
   }
   
   function nth(d) {
@@ -41,5 +42,4 @@ module.exports = function (date, part) {
       default: return "th";
     }
   }
-  
 };
