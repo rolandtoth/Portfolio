@@ -2,7 +2,7 @@
     "blogUrl": "http://blog.rolandtoth.hu/",
     "domain": "https://rolandtoth.hu",
     "css": "/assets/styles/style.min.css",
-    "pathPrefix": "/portfolio/",
+    "pathPrefix": "/",
     "scripts": [
         "/assets/scripts/lazysizes.min.js",
         "/assets/scripts/main.min.js"
