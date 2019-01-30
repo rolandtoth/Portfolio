@@ -36,7 +36,7 @@ module.exports = function (eleventyConfig) {
       output: "dist",
       includes: "includes"
     },
-    pathPrefix: cfg.pathPrefix,
+    //pathPrefix: cfg.pathPrefix,
     templateFormats: ["njk", "md", "json"],
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk",
