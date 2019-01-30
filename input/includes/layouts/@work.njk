@@ -9,7 +9,7 @@
 <div>
   <h1>{{ title }}</h1>
   <p class="subtitle-small">
-    Posted on <time datetime="{{ date }}">{{ date | dateDisplay }}</time>
+    Posted on <time datetime="{{ date }}">{{ date | dateDisplay | safe }}</time>
   </p>
   <p class="subtitle">
     <strong>{{ excerpt }}</strong>
