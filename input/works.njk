@@ -21,7 +21,7 @@ title: Works
     <li style="background-image: url('{{ img | url | buildTimestamp }}')">
       <a href="{{ page.url | url }}">
       {{ page.data.title }}
-      <span>{{ page.data.date | dateDisplay }}</span>
+      <span>{{ page.data.date | dateDisplay | safe }}</span>
       </a>
     </li>
   {% endfor %}
