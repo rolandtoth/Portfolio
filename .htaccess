@@ -1,7 +1,33 @@
-AddDefaultCharset UTF-8
+Options -Indexes
+IndexIgnore *
+Options +FollowSymLinks
 
-Header unset ETag
-FileETag None
+ErrorDocument 403 https://rolandtoth.hu/404.html
+ErrorDocument 404 https://rolandtoth.hu/404.html
+
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	AddDefaultCharset UTF-8
+
+	RedirectMatch Permanent ^/portfolio(.*) https://rolandtoth.hu/$1
+	
+	RedirectMatch Permanent ^/kisgalya(.*) https://kisgalya.hu/$1
+	
+	RedirectMatch Permanent ^/columnselect(.*) http://columnselect.rolandtoth.hu/$1
+	RedirectMatch Permanent ^/pastecolor(.*) http://pastecolor.rolandtoth.hu/$1
+	RedirectMatch Permanent ^/tocsic(.*) http://tocsic.rolandtoth.hu/$1
+	RedirectMatch Permanent ^/(yap|yaP)(.*) http://yap.rolandtoth.hu$2
+	
+	RedirectMatch Permanent ^/files/(.*) http://files.rolandtoth.hu/$1
+	RedirectMatch Permanent ^/pic/(.*) http://pic.rolandtoth.hu/$1
+
+	RewriteCond %{HTTPS} off
+	RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+	RewriteCond %{HTTPS} on
+	RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+	RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+</IfModule>
 
 <IfModule mod_gzip.c>
     mod_gzip_on       Yes
@@ -15,14 +41,16 @@ FileETag None
 </IfModule>
 
 <ifModule mod_headers.c>
-	Header set Connection keep-alive
+    Header unset ETag
+    Header set Connection keep-alive
 </ifModule>
-
-AddType application/x-font-woff woff
+FileETag None
 
 # enable gzip compression
-<IfModule mod_filter.c>
-	AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/x-javascript text/javascript application/javascript application/json
+<IfModule mod_deflate.c>
+	<IfModule mod_filter.c>
+		AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/x-javascript text/javascript application/javascript application/json
+	</IfModule>
 </IfModule>
 
 <IfModule mod_deflate.c>
@@ -48,17 +76,6 @@ AddType application/x-font-woff woff
   AddOutputFilterByType DEFLATE text/javascript
   AddOutputFilterByType DEFLATE text/plain
   AddOutputFilterByType DEFLATE text/xml
-
-  AddOutputFilterByType DEFLATE text/plain
-  AddOutputFilterByType DEFLATE text/html
-  AddOutputFilterByType DEFLATE text/xml
-  AddOutputFilterByType DEFLATE text/css
-  AddOutputFilterByType DEFLATE application/xml
-  AddOutputFilterByType DEFLATE application/xhtml+xml
-  AddOutputFilterByType DEFLATE application/rss+xml
-  AddOutputFilterByType DEFLATE application/javascript
-  AddOutputFilterByType DEFLATE application/json
-  AddOutputFilterByType DEFLATE application/x-javascript
 
   # Remove browser bugs (only needed for really old browsers)
   BrowserMatch ^Mozilla/4 gzip-only-text/html
@@ -118,11 +135,3 @@ AddType application/x-font-woff woff
     ExpiresByType image/svg+xml                         "access plus 1 month"
 
 </IfModule>
-
-RewriteEngine On
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-RewriteCond %{HTTPS} on
-RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
-RewriteRule ^(.*)$ https://%1/$1 [R=301,L]

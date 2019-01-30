@@ -558,15 +558,15 @@ h3 {
         padding: 0;
         margin: 0;
         @include _fg(1,
-        0,
+        2em,
         0);
 
         @media ($tablet) {
-            @include _fg(2);
+            @include _fg(2, 2em);
         }
 
-        @media ($desktop) {
-            @include _fg(3);
+        @media ($hd) {
+            @include _fg(3, 2em);
         }
     }
 
@@ -580,9 +580,8 @@ h3 {
         z-index: 2;
         background-size: cover;
         outline: 1px solid $bordercolor;
-        outline-offset: 11px;
-        margin-right: -1px;
-        margin-bottom: 23px;
+        border: 11px solid white;
+        margin-bottom: 2em;
         backface-visibility: hidden;
 
         @media ($max-mobile) {
@@ -605,7 +604,7 @@ h3 {
             text-shadow: none;
 
             &::before {
-                background: rgba(white, 0.87);
+                background: rgba(white, 0.9);
             }
         }
 
@@ -907,6 +906,10 @@ footer {
 
     a {
         color: $base;
+
+        &:not(:hover) {
+            text-decoration: none;
+        }
     }
 }
 
