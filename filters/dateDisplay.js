@@ -29,7 +29,7 @@ module.exports = function (date, part) {
           "December"
       ];
     
-    return `${day}<sup>${ordinal}</sup> ${months[d.getMonth()]}, ${d.getUTCFullYear()}`;
+    return `${day}<sup>${ordinal}</sup> of ${months[d.getMonth()]}, ${d.getUTCFullYear()}`;
   }
   
   function nth(d) {
