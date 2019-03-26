@@ -1,7 +1,7 @@
 // out: ../..//input/includes/style.min.css, compress: true, sourceMap: false, autoprefixer: last 3 versions, groupmedia: true
 // out: ../../assets/styles/style.min.css, compress: true, sourceMap: false, autoprefixer: last 3 versions, groupmedia: true
 // variables
-$version: "?v=20190130";
+$version: "?v=20190326";
 $base: #2c3235;
 $paleblue: hsl(201, 20%, 36%);
 $blueishgrey: rgba(144, 164, 174, 0.18);
@@ -130,7 +130,7 @@ header {
         bottom: 0;
         right: 0;
         z-index: -1;
-        background: rgba(19, 84, 115, 0.76);
+        background: rgba(19, 84, 115, 0.84);
     }
 
     a {
