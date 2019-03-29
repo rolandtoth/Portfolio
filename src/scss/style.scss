@@ -1,7 +1,7 @@
 // out: ../..//input/includes/style.min.css, compress: true, sourceMap: false, autoprefixer: last 3 versions, groupmedia: true
 // out: ../../assets/styles/style.min.css, compress: true, sourceMap: false, autoprefixer: last 3 versions, groupmedia: true
 // variables
-$version: "?v=20190328";
+$version: "?v=20190330";
 $base: #2c3235;
 $paleblue: hsl(201, 20%, 36%);
 $blueishgrey: rgba(144, 164, 174, 0.18);
@@ -111,13 +111,14 @@ header {
     z-index: -1;
     color: white;
     padding: 2rem 0 0.5rem;
-    background-size: cover;
     transform: translate3d(0, 0, -1px) scale(1.33333);
     transform-origin: center 50vh;
     margin-left: -3px;
-
+    
     @media ($desktop) {
         background-image: url("#{$images}/header.jpg#{$version}");
+        background-position: center center;
+        background-size: cover;
         padding: 3rem 0 4rem;
     }
 
@@ -129,9 +130,8 @@ header {
         bottom: 0;
         right: 0;
         z-index: -1;
-        opacity: 0.88;
-        background-color: $base;
-        background: linear-gradient(45deg,#1C2147 0,#A36479 60%, #1C2147 100%);
+        opacity: 0.92;
+        background-color: darken($paleblue, 10%);
     }
 
     a {
