@@ -4,10 +4,9 @@
         <meta http-equiv="content-type" content="text/html;charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="{{ seo_description }}">
-        <meta name="theme-color" content="#49616e">
+        <meta name="theme-color" content="{{ cfg.themeColor }}">
         <title>{{ title | pageTitle}}</title>
-        {# <link rel="stylesheet" href="{{ cfg.css | url | buildTimestamp }}"/> #}
-        {% set css %}{% include "style.min.css" %}{% endset %}
+        {% set css %}{% include "style.css" %}{% endset %}
         <style>{{ css | safe }}</style>
         <link rel="shortcut icon" href="{{ cfg.favicon | url }}">
     </head>
@@ -38,7 +37,11 @@
                 </div>
             </div>
         </div>
-        <script>var quotes={{ cfg.quotes | dump | safe }},pageNumber={% if pagination.pageNumber %}{{ pagination.pageNumber + 1 }}{% else %}1{% endif %};</script>
+        {% if page.inputPath.indexOf("index.njk") !== -1 %}
+        <script>var quotes={{ cfg.quotes | dump | safe }},pageNumber={% if pagination.pageNumber %}{{ pagination.pageNumber + 1 }}{% else %}1{% endif %};
+            {%- set js %}{% include "main.js" %}{% endset -%}
+            {{- js | safe -}}</script>
+        {% endif %}
         {% for script in cfg.scripts %}
         <script src="{{ script | url | buildTimestamp }}" async></script>
         {% endfor %}

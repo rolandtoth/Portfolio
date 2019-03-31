@@ -1,12 +1,11 @@
-// out: ../..//input/includes/style.min.css, compress: true, sourceMap: false, autoprefixer: last 3 versions, groupmedia: true
-// out: ../../assets/styles/style.min.css, compress: true, sourceMap: false, autoprefixer: last 3 versions, groupmedia: true
 // variables
-$version: "?v=20190330";
+$version: "?v=20190331";
 $base: #2c3235;
 $paleblue: hsl(201, 20%, 36%);
 $blueishgrey: rgba(144, 164, 174, 0.18);
 $bordercolor: #dadada;
 $images: "/assets/images";
+
 // breakpoints
 $_mobile: 480;
 $_tablet: 640;
@@ -21,13 +20,14 @@ $max-mobile: "max-width: #{$_tablet - 1}px";
 $max-tablet: "max-width: #{$_desktop - 1}px";
 $max-desktop: "max-width: #{$_hd - 1}px";
 $max-hd: "max-width: #{$_xhd - 1}px";
+
 // imports
-@import "_normalize";
-@import "_mixins";
+@import "normalize";
+@import "mixins";
 @import "fonts/raleway";
 @import "fonts/benchnine";
-@import "fg_grid/_fg_grid";
-@import "_svg-icons";
+@import "fg_grid/fg_grid";
+@import "svg-icons";
 
 // override defaults
 * {

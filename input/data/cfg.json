@@ -3,9 +3,9 @@
     "domain": "https://rolandtoth.hu",
     "css": "/assets/styles/style.min.css",
     "pathPrefix": "/",
+    "themeColor": "#49616e",
     "scripts": [
-        "/assets/scripts/lazysizes.min.js",
-        "/assets/scripts/main.min.js"
+        "/assets/scripts/lazysizes.min.js"
     ],
     "avatar": "/assets/images/roland-toth-pal.jpg",
     "favicon": "/assets/images/favicon.ico",
