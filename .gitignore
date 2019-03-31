@@ -1,2 +1,4 @@
 node_modules
 dist
+assets/scripts/main.min.js
+input/includes/style.css
