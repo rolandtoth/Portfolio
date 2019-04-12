@@ -106,7 +106,6 @@ header {
     margin-bottom: 0;
     position: relative;
     overflow: hidden;
-    background-size: cover;
     backface-visibility: hidden;
     z-index: -1;
     color: white;
@@ -114,11 +113,14 @@ header {
     transform: translate3d(0, 0, -1px) scale(1.33333);
     transform-origin: center 50vh;
     margin-left: -3px;
-    
+    background: radial-gradient(black 15%, transparent 16%) 0 0,
+        radial-gradient(black 15%, transparent 16%) 8px 8px,
+        radial-gradient(rgba(255, 255, 255, .1) 15%, transparent 20%) 0 1px,
+        radial-gradient(rgba(255, 255, 255, .1) 15%, transparent 20%) 8px 9px;
+    background-color: #282828;
+    background-size: 16px 16px;
+
     @media ($desktop) {
-        background-image: url("#{$images}/header.jpg#{$version}");
-        background-position: center center;
-        background-size: cover;
         padding: 3rem 0 4rem;
     }
 
@@ -130,8 +132,8 @@ header {
         bottom: 0;
         right: 0;
         z-index: -1;
-        opacity: 0.92;
-        background-color: darken($paleblue, 10%);
+        opacity: 0.5;
+        background-color: $paleblue;
     }
 
     a {
