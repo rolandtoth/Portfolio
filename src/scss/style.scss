@@ -4,6 +4,7 @@ $base: #2c3235;
 $paleblue: hsl(201, 20%, 36%);
 $blueishgrey: rgba(144, 164, 174, 0.18);
 $bordercolor: #dadada;
+$headerBgColor: #08486d;
 $images: "/assets/images";
 
 // breakpoints
@@ -117,7 +118,7 @@ header {
         radial-gradient(black 15%, transparent 16%) 8px 8px,
         radial-gradient(rgba(255, 255, 255, .1) 15%, transparent 20%) 0 1px,
         radial-gradient(rgba(255, 255, 255, .1) 15%, transparent 20%) 8px 9px;
-    background-color: darken($paleblue, 10%);
+    background-color: $headerBgColor;
     background-size: 16px 16px;
 
     @media ($desktop) {
