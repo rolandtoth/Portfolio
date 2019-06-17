@@ -114,7 +114,7 @@ header {
     transform: translate3d(0, 0, -1px) scale(1.33333);
     transform-origin: center 50vh;
     margin-left: -3px;
-    background: transparent url("#{$images}/jon-cartagena-1330637-unsplash.jpg") center top no-repeat;
+    background: $paleblue url("#{$images}/photo-1506543357449-318286c2cc26.webp") center top no-repeat;
     background-size: cover;
 
     @media ($desktop) {
