@@ -20,7 +20,7 @@ permalink: /{% if pagination.pageNumber === 0 %}index.html{% else %}page-{{ pagi
 {% block main %}
 {% if pagination.pageNumber < 1 %}
   <div class="intro">
-  <a href="{{ "/about/" | url }}">
+  <a href="{{ "/about/" | url }}" class="avatar-link">
     <img src="{{ cfg.avatar | url | buildTimestamp }}" alt="Roland Toth Pal" class="avatar" {{ cfg.avatar | imageDimensions | safe }}>
   </a>
   <div>
@@ -28,7 +28,7 @@ permalink: /{% if pagination.pageNumber === 0 %}index.html{% else %}page-{{ pagi
       <strong>Welcome to my webdesign/development portfolio.</strong>
     </p>
     <p>
-      Learn about <a href="{{ "/about/" | url }}"><strong>me</strong></a> or read more awesomeness in my <a href="{{ cfg.blogUrl }}" target="_blank" rel="noopener"><strong> blog</strong></a>.
+      Learn about <a href="{{ "/about/" | url }}"class="about-link"><strong>me</strong></a> or read more awesomeness in my <a href="{{ cfg.blogUrl }}" target="_blank" rel="noopener"><strong> blog</strong></a>.
     </p>
   </div>
   </div>
