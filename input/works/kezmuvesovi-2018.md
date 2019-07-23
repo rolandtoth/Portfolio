@@ -12,7 +12,7 @@ worktags:
     - Sitebuild
 ---
 
-Seven years after having a <a href="{{ "/works/kezmuvesovi/" | url }}">WordPress site</a> I rewrote it using Eleventy static site generator and made its look more modern. I struggled with the design several days until I got it look the way I liked and fortunately the nursery management was also loving it. It's much more simpler and less blog or portal looking and the important information can be found much easier. Unlike the previous version it's fully responsive which was one of the main motives for the change.
+Seven years after having a <a href="{{ "/works/kezmuvesovi/" | url }}" class="internal-link">WordPress site</a> I rewrote it using Eleventy static site generator and made its look more modern. I struggled with the design several days until I got it look the way I liked and fortunately the nursery management was also loving it. It's much more simpler and less blog or portal looking and the important information can be found much easier. Unlike the previous version it's fully responsive which was one of the main motives for the change.
 
 Photo galleries are using Google Photos and actually it's entirely CSS-only, thanks to <a href="https://perfundo.oberlehner.net" target="_blank">Perfundo</a>. It was fun setting it up and even though I had to make a few changes to it, it's working very nicely.
 
