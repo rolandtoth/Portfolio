@@ -114,7 +114,7 @@ header {
     transform: translate3d(0, 0, -1px) scale(1.33333);
     transform-origin: center 50vh;
     margin-left: -3px;
-    background: $paleblue url("#{$images}/photo-1506543357449-318286c2cc26.webp") center top no-repeat;
+    background: $paleblue url("#{$images}/abstract-art-artistic-1328891.webp") center top no-repeat;
     background-size: cover;
 
     @media ($desktop) {
@@ -132,7 +132,7 @@ header {
         opacity: 0.5;
         background-blend-mode: multiply;
         background-color: #49616e;
-        background-image: radial-gradient( ellipse at center, #49616e 0%, rgba(0,0,0,1) 100%);
+        background-image: radial-gradient(ellipse at center, #49616e 0%, rgba(0, 0, 0, 1) 100%);
     }
 
     a {
@@ -205,8 +205,8 @@ header {
     @media ($desktop) {
         >div {
             @include _fg(6 1,
-            0,
-            0);
+                0,
+                0);
         }
     }
 }
@@ -564,8 +564,8 @@ h3 {
         padding: 0;
         margin: 0;
         @include _fg(1,
-        2em,
-        0);
+            2em,
+            0);
 
         @media ($tablet) {
             @include _fg(2, 2em);
@@ -638,8 +638,8 @@ h3 {
 
 .work-grid {
     @include _fg(1,
-    0,
-    0);
+        0,
+        0);
 
     aside {
         margin-bottom: 2rem;
@@ -655,8 +655,8 @@ h3 {
 
     @media ($desktop) {
         @include _fg(1 1,
-        0,
-        0);
+            0,
+            0);
 
         aside {
             order: 0;
