@@ -1,7 +1,7 @@
 ---
 title: Portfolio of Imre Baksa
 excerpt: Complete rework of Imre Baksa's website.
-url: http://baksaimre.hu/
+url: https://baksaimre.hu/
 img: baksaimre-2017.png
 date: "2017-03-12"
 worktags:
