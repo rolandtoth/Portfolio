@@ -1,0 +1,9 @@
+<div class="contact">
+    <ul>
+        {%- for name, details in contact -%}
+        <li class="{{ name }}">
+            <a href="{{ details[0] | url }}" target="{{ details[2] }}" rel="noopener">{{ details[1] }}</a>
+        </li>
+        {%- endfor -%}
+    </ul>
+</div>
