@@ -65,7 +65,7 @@ a {
 // styles
 html {
     overflow-x: hidden;
-    overflow-y: overlay;
+    // overflow-y: overlay;
 }
 
 body {
@@ -114,7 +114,7 @@ header {
     transform: translate3d(0, 0, -1px) scale(1.33333);
     transform-origin: center 50vh;
     margin-left: -3px;
-    background: $paleblue url("#{$images}/digital-art-963368.webp") center center no-repeat;
+    background: darken($paleblue, 20%) url("#{$images}/bg.svg") center center no-repeat;
     background-size: cover;
 
     @media ($desktop) {
@@ -129,9 +129,8 @@ header {
         bottom: 0;
         right: 0;
         z-index: -1;
-        opacity: 0.64;
+        opacity: 0.25;
         background-color: $paleblue;
-        background-image: radial-gradient(ellipse at center, $paleblue 0%, rgba(0, 0, 0, 0.64) 100%);
     }
 
     a {
