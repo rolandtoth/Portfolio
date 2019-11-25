@@ -129,10 +129,9 @@ header {
         bottom: 0;
         right: 0;
         z-index: -1;
-        opacity: 0.5;
-        background-blend-mode: multiply;
-        background-color: #49616e;
-        background-image: radial-gradient(ellipse at center, #49616e 0%, rgba(0, 0, 0, 1) 100%);
+        opacity: 0.64;
+        background-color: $paleblue;
+        background-image: radial-gradient(ellipse at center, $paleblue 0%, rgba(0, 0, 0, 0.64) 100%);
     }
 
     a {
