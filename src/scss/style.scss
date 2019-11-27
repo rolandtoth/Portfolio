@@ -184,6 +184,11 @@ header {
 
     a {
         display: block;
+        opacity: 0.5;
+
+        &:hover {
+            opacity: 0.84;
+        }
     }
 
     strong {
