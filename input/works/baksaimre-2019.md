@@ -1,5 +1,5 @@
 ---
-title: Imre Baksa portfolio redesign 2019
+title: Imre Baksa portfolio 2019
 excerpt: Fresh portfolio site for Imre Baksa actor/director put together with Angular + ProcessWire.
 url: https://baksaimre.hu/
 img: baksaimre-2019.png

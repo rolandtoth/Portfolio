@@ -45,4 +45,5 @@ var randomQuote = {
 };
 
 randomQuote.randomize();
+randomQuote.updateQuote();
 randomQuote.addButton();
