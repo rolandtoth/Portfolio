@@ -114,8 +114,12 @@ header {
     transform: translate3d(0, 0, -1px) scale(1.33333);
     transform-origin: center 50vh;
     margin-left: -3px;
-    background: darken($paleblue, 20%) url("#{$images}/bg.svg") center center no-repeat;
+    background: darken($paleblue, 20%) url("#{$images}/bg-mobile.jpg") center center no-repeat;
     background-size: cover;
+
+    @media ($tablet) {
+        background-image: url("#{$images}/bg.jpg");
+    }
 
     @media ($desktop) {
         padding: 3rem 0 4rem;
