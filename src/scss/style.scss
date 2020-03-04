@@ -97,10 +97,13 @@ body {
 }
 
 .main-wrap {
-    perspective: 3px;
-    transform-style: preserve-3d;
-    height: 100vh;
     overflow-x: hidden;
+
+    @media($desktop) {
+        perspective: 3px;
+        transform-style: preserve-3d;
+        height: 100vh;
+    }
 }
 
 header {
@@ -111,9 +114,6 @@ header {
     z-index: -1;
     color: white;
     padding: 2rem 0 0.5rem;
-    transform: translate3d(0, 0, -1px) scale(1.33333);
-    transform-origin: center 50vh;
-    margin-left: -3px;
     background: darken($paleblue, 20%) url("#{$images}/bg-mobile.jpg") center center no-repeat;
     background-size: cover;
 
@@ -123,6 +123,9 @@ header {
 
     @media ($desktop) {
         padding: 3rem 0 4rem;
+        transform: translate3d(0, 0, -1px) scale(1.33333);
+        transform-origin: center 50vh;
+        margin-left: -3px;
     }
 
     &::after {
