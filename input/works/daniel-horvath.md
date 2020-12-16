@@ -1,7 +1,6 @@
 ---
 title: Daniel Horvath
 excerpt: Daniel Horvath brand developer's site built with ProcessWire and fullPage.js.
-url: http://danielhorvath.eu/
 img: danielhorvath-2016.png
 date: "2016-06-07"
 worktags:
