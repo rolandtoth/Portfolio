@@ -1,7 +1,7 @@
 /*
   X-Frame-Options: DENY
   X-XSS-Protection: 1; mode=block
-  Content-Security-Policy: style-src 'unsafe-inline' 'self';img-src 'self' data:;script-src 'self' 'unsafe-eval';frame-src 'self';default-src 'self' data: blob:
+  Content-Security-Policy: style-src 'self';img-src 'self' data:;script-src 'self';frame-src 'self';default-src 'self' data: blob:
   X-Content-Type-Options: nosniff
   Permissions-Policy: accelerometer=(self), camera=(self), geolocation=(self), gyroscope=(self), magnetometer=(self), microphone=(self), payment=(self), usb=(self)
   Referrer-Policy: strict-origin-when-cross-origin
