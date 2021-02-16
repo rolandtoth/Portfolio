@@ -7,7 +7,7 @@
             <noscript>
                 <img src="{{ img | url | buildTimestamp }}" {{ img | imageDimensions | safe }} alt=""/>
             </noscript>
-            <img src="{{ cfg.transparentPlaceholder }}" data-src="{{ img | url | buildTimestamp }}" class="lazyload" {{ img | imageDimensions | safe }} alt=""/>
+            <img src="{{ cfg.transparentPlaceholder }}" src="{{ img | url | buildTimestamp }}" loading=lazy {{ img | imageDimensions | safe }} alt=""/>
         </label>
     </div>
     <div class="description">
