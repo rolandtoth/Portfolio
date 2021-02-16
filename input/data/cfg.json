@@ -4,9 +4,7 @@
     "css": "/assets/styles/style.min.css",
     "pathPrefix": "/",
     "themeColor": "#49616e",
-    "scripts": [
-        "/assets/scripts/lazysizes.min.js"
-    ],
+    "scripts": [],
     "avatar": "/assets/images/roland-toth-pal.jpg",
     "favicon": "/assets/images/favicon.ico",
     "transparentPlaceholder": "data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==",
