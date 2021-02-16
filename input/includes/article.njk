@@ -5,7 +5,7 @@
         <label for="{{ checkboxID }}">
             {% set img = page.data.img | postImage(cfg.images.fullSize) %}
             <noscript>
-                <img src="{{ img | url | buildTimestamp }}" {{ img | imageDimensions | safe }} alt=""/>
+                <img src="{{ img | replace(".png", ".webp") | url | buildTimestamp }}" {{ img | imageDimensions | safe }} alt=""/>
             </noscript>
             <img src="{{ img | url | buildTimestamp }}" loading=lazy {{ img | imageDimensions | safe }} alt=""/>
         </label>
