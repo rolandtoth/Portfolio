@@ -113,7 +113,7 @@ header {
     backface-visibility: hidden;
     color: white;
     padding: 2rem 0 0.5rem;
-    background: #282A49 url("#{$images}/bg-mobile.jpg") center center no-repeat;
+    background: #282A49;
     background-size: cover;
     
     @media ($desktop) {
