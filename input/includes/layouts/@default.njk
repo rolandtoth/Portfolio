@@ -38,7 +38,7 @@
             </div>
         </div>
         {% if page.inputPath.indexOf("index.njk") !== -1 %}
-        <script>var quotes={{ cfg.quotes | dump | safe }},pageNumber={% if pagination.pageNumber %}{{ pagination.pageNumber + 1 }}{% else %}1{% endif %};
+        <script hash="sha256-7Ybsu/3mJlPLzTKItZLW4KsBg42+v2BnfjDoxeYeL9E=">var quotes={{ cfg.quotes | dump | safe }},pageNumber={% if pagination.pageNumber %}{{ pagination.pageNumber + 1 }}{% else %}1{% endif %};
             {%- set js %}{% include "main.js" %}{% endset -%}
             {{- js | safe -}}</script>
         {% endif %}
