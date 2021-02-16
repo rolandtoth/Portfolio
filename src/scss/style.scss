@@ -117,7 +117,7 @@ header {
     background-size: cover;
     
     @media ($desktop) {
-        @webpImageSetWithFallback("#{$images}/bg");
+        @include webpImageSetWithFallback("#{$images}/bg");
         padding: 3rem 0 4rem;
         transform: translate3d(0, 0, -1px) scale(1.33333);
         transform-origin: center 50vh;
