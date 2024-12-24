@@ -1,23 +1,23 @@
-const cfg = require("../input/data/cfg.json");
-const glob = require("glob");
-const sharp = require("sharp");
-const path = require("path");
+import cfg from "../input/_data/cfg.json" assert { type: "json" };
+import glob from "glob";
+import sharp, { kernel as _kernel } from "sharp";
+import { extname } from "path";
+
+const { images } = cfg;
 
 // options is optional
-glob("src/images/works/*.*(jpg|png)", null, function (er, files) {
+glob("src/images/works/*.*(jpg|png)", null, function (err, files) {
     // files is an array of filenames.
     // If the `nonull` option is set, and nothing
     // was found, then files is ["**/*.js"]
-    // er is an error object or null.
-    resizeImages(files, cfg.images.fullSize);
+    // err is an error object or null.
+    resizeImages(files, images.fullSize);
     // resizeImages(files, cfg.images.smallSize);
-    resizeImages(files, cfg.images.thumbSize);
+    resizeImages(files, images.thumbSize);
 });
 
-
 function resizeImages(files, dimensions) {
-
-    var width = dimensions.width,
+    const width = dimensions.width,
         height = dimensions.height,
         widthString = width === null ? "0" : width.toString(),
         heightString = height === null ? "0" : height.toString(),
@@ -25,8 +25,7 @@ function resizeImages(files, dimensions) {
         counter = 0;
 
     files.forEach(function (file, index) {
-
-        var extension = path.extname(file),
+        let extension = extname(file),
             outFile;
 
         outFile = file
@@ -35,7 +34,7 @@ function resizeImages(files, dimensions) {
 
         sharp(file)
             .resize(width, height, {
-                kernel: sharp.kernel.lanczos3
+                kernel: _kernel.lanczos3
             })
             .crop("northeast")
             .toFile(outFile)

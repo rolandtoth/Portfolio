@@ -1,9 +1,9 @@
-const sizeOf = require("image-size");
+import sizeOf from "image-size";
 
 /*
 Return width and height for images.
 */
-module.exports = function (path) {
+export default function (path) {
   if (path.charAt(0) === '/') {
     path = path.substr(1);
   }

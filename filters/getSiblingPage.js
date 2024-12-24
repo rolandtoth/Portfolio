@@ -1,4 +1,4 @@
-module.exports = function (path, collection, sibling = "next") {
+export default function (path, collection, sibling = "next") {
   var index, siblingPage;
 
   for (var i = 0; i < collection.length; i++) {

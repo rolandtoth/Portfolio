@@ -1,9 +1,8 @@
 /*
 A date formatter filter for Nunjucks
 */
-module.exports = function (date, part) {
-
-  var d = (date === "now") ? new Date() : new Date(date);
+export default function (date, part) {
+  const d = (date === "now") ? new Date() : new Date(date);
 
   if (part === 'year') {
     return d.getUTCFullYear();
@@ -28,10 +27,10 @@ module.exports = function (date, part) {
           "November",
           "December"
       ];
-    
+
     return `${day}<sup>${ordinal}</sup> of ${months[d.getMonth()]}, ${d.getUTCFullYear()}`;
   }
-  
+
   function nth(d) {
     if (d > 3 && d < 21) return 'th';
 

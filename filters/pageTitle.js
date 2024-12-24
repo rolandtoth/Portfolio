@@ -1,6 +1,3 @@
-/**
- *
- */
-module.exports = function (str) {
+export default function (str) {
     return (str ? str + " - " : "") + "Roland Toth";
 };
