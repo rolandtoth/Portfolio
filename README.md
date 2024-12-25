@@ -11,4 +11,4 @@ Portfolio site source (Eleventy)
 
 ## Build
 
-- `npm run build; npm run buildSite` (powershell)
+- `npm run build; npm run build` (powershell)
