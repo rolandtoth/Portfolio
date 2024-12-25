@@ -1,7 +1,7 @@
 {
     "blogUrl": "http://blog.rolandtoth.hu/",
     "domain": "https://rolandtoth.hu",
-    "css": "/assets/styles/style.min.css",
+    "css": "/assets/styles/style.css",
     "pathPrefix": "/",
     "themeColor": "#49616e",
     "scripts": [],

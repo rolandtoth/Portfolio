@@ -8,8 +8,6 @@
   "dependencies": {
     "@11ty/eleventy": "3.0.1-alpha.1",
     "@11ty/eleventy-plugin-rss": "^2.0.2",
-    "autoprefixer": "^10.4.20",
-    "cssnano": "^7.0.6",
     "del": "^8.0.0",
     "glob": "^11.0.0",
     "htmlnano": "^2.1.1",
@@ -19,12 +17,9 @@
     "imagemin-pngquant": "^10.0.0",
     "jshint": "^2.10.2",
     "mkdirp": "^3.0.1",
-    "node-sass": "^9.0.0",
     "onchange": "^7.1.0",
     "parallelshell": "^3.0.2",
     "path": "^0.12.7",
-    "postcss": "^8.4.49",
-    "postcss-cli": "^11.0.0",
     "sharp": "^0.33.5",
     "terser": "^5.37.0",
     "uglify-js": "^3.5.2"
@@ -34,17 +29,14 @@
     "url": "https://github.com/rolandtoth/portfolio.git"
   },
   "scripts": {
-    "dev": "npx eleventy --serve",
+    "build": "npx eleventy",
+    "dev": "npx eleventy --serve --watch",
     "images:process": "node scripts/processImages",
     "images:optimize": "node scripts/optimizeImages",
-    "buildSite": "npx eleventy",
-    "build:css": "node-sass --include-path src/scss/includes src/scss/style.scss | postcss --use autoprefixer -b \"last 2 versions\" --use cssnano --no-map > input/includes/style.css",
     "lint": "jshint src/js/main.js",
     "build:js": "uglifyjs src/js/main.js -o input/includes/main.js",
-    "build": "npm run build:css && npm run build:js",
     "prebuild:js": "npm run lint",
-    "watch:css": "onchange \"src/scss/*.scss\" -- npm run build:css",
-    "watch:js": "onchange \"src/js/*.js\" -- npm run build:js",
-    "watch": "parallelshell \"npm run watch:css\" \"npm run watch:js\""
+    "watch": "parallelshell \"npm run watch:js\"",
+    "watch:js": "onchange \"src/js/*.js\" -- npm run build:js"
   }
 }

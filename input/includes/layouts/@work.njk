@@ -30,20 +30,29 @@
     {% endif %}
     {% import "worktags.njk" as wt %}
     {{ wt.worktags(worktags, date) }}
-    
+
     {% set prevPage = page.inputPath | getSiblingPage(collections.work, "prev") %}
     {% set nextPage = page.inputPath | getSiblingPage(collections.work, "next") %}
   </div>
 </div>
 
 <p>
-  <a href="{{ "/works/" | url }}" class="back">Works</a>
+  <a href="{{ "/works/" | url }}" class="back">
+    <i class="icon icon-prev"></i>
+    Back to works
+  </a>
 </p>
 
 <div class="prev-next">
   <p>
-    <a href="{{ prevPage.url | url }}" class="prev"><span>{{ prevPage.data.title }}</span></a>
-    <a href="{{ nextPage.url | url }}" class="next"><span>{{ nextPage.data.title }}</span></a>
+    <a href="{{ prevPage.url | url }}" class="prev">
+        <i class="icon icon-prev"></i>
+        <span>{{ prevPage.data.title }}</span>
+      </a>
+    <a href="{{ nextPage.url | url }}" class="next">
+      <i class="icon icon-next"></i>
+      <span>{{ nextPage.data.title }}</span>
+    </a>
   </p>
 </div>
 {% endblock %}

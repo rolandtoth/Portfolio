@@ -6,8 +6,7 @@
         <meta name="description" content="{{ seo_description or title }}">
         <meta name="theme-color" content="{{ cfg.themeColor }}">
         <title>{{ title | pageTitle}}</title>
-        {% set css %}{% include "style.css" %}{% endset %}
-        <style>{{ css | safe }}</style>
+        <link rel="stylesheet" href="{{ cfg.css | url }}">
         <link rel="shortcut icon" href="{{ cfg.favicon | url }}">
         <meta name="theme-color" content="#1B1F24">
         <link rel="canonical" href="{{ page.url | httpUrl }}">

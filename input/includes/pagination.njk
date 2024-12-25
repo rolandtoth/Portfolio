@@ -1,9 +1,35 @@
 <div class="pagination">
     <ul>
-        <li class="first{% if pagination.pageNumber === 0 %} disabled{% endif %}"><a href="{{ "/" | url }}" data-page="first">First</a></li>
-        <li class="prev{% if pagination.pageNumber === 0 %} disabled{% endif %}"><a href="{{ pagination.previousPageHref | url | removeIndexHtml }}" data-page="prev">Prev</a></li>
-        <li class="current disabled"><a href="{{ page.url | url | removeIndexHtml }}">{{ pagination.pageNumber + 1 }} <span>/</span> {{ pagination.pageLinks.length }}</a></li>
-        <li class="next{% if pagination.pageNumber === pagination.pageLinks.length - 1 %} disabled{% endif %}"><a href="{{ pagination.nextPageHref | url | removeIndexHtml }}" data-page="next">Next</a></li>
-        <li class="last{% if pagination.pageNumber === pagination.pageLinks.length - 1 %} disabled{% endif %}"><a href="{{ "/" | url }}page-{{ pagination.pageLinks.length }}/" data-page="last">Last</a></li>
+        <li class="first{% if pagination.pageNumber === 0 %} disabled{% endif %}">
+            <a href="{{ "/" | url }}" data-page="first">
+                <i class="icon icon-first"></i>
+                First
+            </a>
+        </li>
+        <li class="prev{% if pagination.pageNumber === 0 %} disabled{% endif %}">
+            <a href="{{ pagination.previousPageHref | url | removeIndexHtml }}" data-page="prev">
+                <i class="icon icon-first"></i>
+                Prev
+            </a>
+        </li>
+        <li class="current disabled">
+            <a href="{{ page.url | url | removeIndexHtml }}">
+                {{ pagination.pageNumber + 1 }}
+                <span>/</span>
+                {{ pagination.pageLinks.length }}
+            </a>
+        </li>
+        <li class="next{% if pagination.pageNumber === pagination.pageLinks.length - 1 %} disabled{% endif %}">
+            <a href="{{ pagination.nextPageHref | url | removeIndexHtml }}" data-page="next">
+                <i class="icon icon-next"></i>
+                Next
+            </a>
+        </li>
+        <li class="last{% if pagination.pageNumber === pagination.pageLinks.length - 1 %} disabled{% endif %}">
+            <a href="{{ "/" | url }}page-{{ pagination.pageLinks.length }}/" data-page="last">
+                <i class="icon icon-last"></i>
+                Last
+            </a>
+        </li>
     </ul>
 </div>
