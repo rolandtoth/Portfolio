@@ -1,6 +1,5 @@
 import { feedPlugin } from "@11ty/eleventy-plugin-rss";
 import htmlnano from "htmlnano";
-import cfg from "./input/_data/cfg.json" assert { type: "json" };
 
 import buildTimestampFilter from "./filters/buildTimestamp.js";
 import dateDisplayFilter from "./filters/dateDisplay.js";
@@ -13,6 +12,11 @@ import removeIndexHtmlFilter from "./filters/removeIndexHtml.js";
 import sectionFilter from "./filters/section.js";
 import squashFilter from "./filters/squash.js";
 import timestampFilter from "./filters/timestamp.js";
+
+import { createRequire } from "module";
+
+const require = createRequire(import.meta.url);
+const cfg = require("./input/_data/cfg.json");
 
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default async function(eleventyConfig) {

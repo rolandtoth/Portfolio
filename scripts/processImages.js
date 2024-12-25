@@ -1,7 +1,10 @@
-import cfg from "../input/_data/cfg.json" assert { type: "json" };
 import glob from "glob";
 import sharp, { kernel as _kernel } from "sharp";
 import { extname } from "path";
+import { createRequire } from "module";
+
+const require = createRequire(import.meta.url);
+const cfg = require("../input/_data/cfg.json");
 
 const { images } = cfg;
 

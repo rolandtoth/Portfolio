@@ -34,6 +34,7 @@
     "url": "https://github.com/rolandtoth/portfolio.git"
   },
   "scripts": {
+    "dev": "npx eleventy --serve",
     "processImages": "node scripts/processImages",
     "optimizeImages": "node scripts/optimizeImages",
     "buildSite": "npx eleventy",
