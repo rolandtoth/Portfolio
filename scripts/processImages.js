@@ -1,5 +1,5 @@
-import glob from "glob";
-import sharp, { kernel as _kernel } from "sharp";
+import { glob } from "glob";
+import sharp from "sharp";
 import { extname } from "path";
 import { createRequire } from "module";
 
@@ -7,25 +7,19 @@ const require = createRequire(import.meta.url);
 const cfg = require("../input/_data/cfg.json");
 
 const { images } = cfg;
+const files = await glob("src/images/works/*.*(jpg|png)", { posix: true, dotRelative: true });
 
-// options is optional
-glob("src/images/works/*.*(jpg|png)", null, function (err, files) {
-    // files is an array of filenames.
-    // If the `nonull` option is set, and nothing
-    // was found, then files is ["**/*.js"]
-    // err is an error object or null.
-    resizeImages(files, images.fullSize);
-    // resizeImages(files, cfg.images.smallSize);
-    resizeImages(files, images.thumbSize);
-});
+resizeImages(files, images.fullSize);
+resizeImages(files, images.thumbSize);
 
 function resizeImages(files, dimensions) {
     const width = dimensions.width,
         height = dimensions.height,
         widthString = width === null ? "0" : width.toString(),
         heightString = height === null ? "0" : height.toString(),
-        filesCount = files.length,
-        counter = 0;
+        filesCount = files.length;
+
+    let counter = 0;
 
     files.forEach(function (file, index) {
         let extension = extname(file),
@@ -36,10 +30,7 @@ function resizeImages(files, dimensions) {
             .replace('src/', 'assets/');
 
         sharp(file)
-            .resize(width, height, {
-                kernel: _kernel.lanczos3
-            })
-            .crop("northeast")
+            .resize(width, height, { position: "left top" })
             .toFile(outFile)
             .then(() => {
                 counter++;

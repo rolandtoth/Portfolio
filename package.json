@@ -35,8 +35,8 @@
   },
   "scripts": {
     "dev": "npx eleventy --serve",
-    "processImages": "node scripts/processImages",
-    "optimizeImages": "node scripts/optimizeImages",
+    "images:process": "node scripts/processImages",
+    "images:optimize": "node scripts/optimizeImages",
     "buildSite": "npx eleventy",
     "build:css": "node-sass --include-path src/scss/includes src/scss/style.scss | postcss --use autoprefixer -b \"last 2 versions\" --use cssnano --no-map > input/includes/style.css",
     "lint": "jshint src/js/main.js",
